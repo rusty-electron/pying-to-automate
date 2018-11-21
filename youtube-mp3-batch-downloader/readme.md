@@ -43,6 +43,10 @@ python youtube-dlr.py
 
 The default location for downloading files is in the `download/` folder in the current directory (can be altered in the code).
 
+## Acknowledgments
+* [Ricardo Garcia](https://github.com/rg3) for creating `youtube-dl`
+* Anyone whose code was used
+
 
 
 
