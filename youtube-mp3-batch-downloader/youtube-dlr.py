@@ -16,12 +16,17 @@ class MyLogger(object):
 
 # define progress hooks	
 def my_hook(d):
+	global flag
 	if d['status'] == 'downloading':
-		print('Source size: {0:.2f} MB' .format(d['total_bytes']/(1024*1024)))
-		print('Downloading: ' + d['filename'])
-		print('File Progress: {0:.2f}%' .format(d['downloaded_bytes'] / d['total_bytes']*100))
+		if(flag == 0):
+			print('Source size: {0:.2f} MB' .format(d['total_bytes']/(1024*1024)))
+			print('Downloading: ' + d['filename'])
+			flag = 1
+		print('File Progress: {0:.2f}%' .format(d['downloaded_bytes'] / d['total_bytes']*100), end='\r')
 	if d['status'] == 'finished':
+		flag = 0
 		print('Done downloading, now converting ...')
+		print()
 		
 # read links.txt file
 fname = "links.txt"
@@ -37,6 +42,8 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 
 print("{0} file(s) queued for download" .format(len(content)))
+
+flag = 0
 
 # setup download configurations
 '''ydl_opts = {
