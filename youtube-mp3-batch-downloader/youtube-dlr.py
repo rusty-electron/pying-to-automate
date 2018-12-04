@@ -55,7 +55,7 @@ flag = 0
 }'''
 
 ydl_opts = {
-	'outtmpl': '\download\%(title)s-%(id)s.%(ext)s',
+	'outtmpl': '\download\%(title)s.%(ext)s',
     'format': 'bestaudio/best',
     'postprocessors': [{
         'key': 'FFmpegExtractAudio',
