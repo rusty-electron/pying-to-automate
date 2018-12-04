@@ -26,6 +26,22 @@ pip install youtube-dl
 ```
 The `youtube-dl` [git repo](https://github.com/rg3/youtube-dl/) contains detailed information for the its usage and the source code.
 
+### Audio/Video Codec
+
+`youtube-dl` utilizes ffmpeg/ffprobe for conversion tasks and therefore you are required to have it in your system `PATH`.
+
+**For Windows**:
+
+Download the codec from [here](https://ffmpeg.zeranoe.com/builds/) and extract and place the files in your system `PATH`.
+
+**For Linux**:
+
+Download it using terminal:
+
+```bash
+sudo apt get install ffmpeg
+```
+
 ## Usage
 
 After the preprequisites have been fulfilled, we can begin downloading by specifying the link(s) in the `links.txt` one line each.
@@ -45,7 +61,13 @@ The default location for downloading files is in the `download/` folder in the c
 
 ## Acknowledgments
 * [Ricardo Garcia](https://github.com/rg3) for creating `youtube-dl`
-* Anyone whose code was used
+* Zeranoe FFMPEG
+
+## Update #1
+
+* added instructions for installing `ffmpeg` on windows and linux
+* added linux supported python script `youtube-dlr-linux.py`
+    * *nothing special, simply changed path names. most of the code in supported in linux*
 
 
 
