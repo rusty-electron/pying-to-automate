@@ -39,7 +39,7 @@ content = [x.strip() for x in content]
 directory = r'/download/'
 
 if not os.path.exists(directory):
-    os.makedirs(directory)
+    os.system('sudo mkdir '+ directory)
 
 print("{0} file(s) queued for download" .format(len(content)))
 
@@ -55,7 +55,7 @@ flag = 0
 }'''
 
 ydl_opts = {
-	'outtmpl': '\download\%(title)s-%(id)s.%(ext)s',
+	'outtmpl': '/download/%(title)s-%(id)s.%(ext)s',
     'format': 'bestaudio/best',
     'postprocessors': [{
         'key': 'FFmpegExtractAudio',
